@@ -41,6 +41,8 @@
 #include "fsl_debug_console.h"
 /* TODO: insert other include files here. */
 
+#include "LED_Manager.h"
+
 /* TODO: insert other definitions and declarations here. */
 
 /*
@@ -61,6 +63,8 @@ int main(void) {
     volatile static int i = 0 ;
     /* Enter an infinite loop, just incrementing a counter. */
     while(1) {
+    	LED_Manager_Task();
+
         i++ ;
     }
     return 0 ;

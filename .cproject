@@ -88,6 +88,7 @@
 									<listOptionValue builtIn="false" value="../CMSIS"/>
 									<listOptionValue builtIn="false" value="../utilities"/>
 									<listOptionValue builtIn="false" value="../startup"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/GPIO_Led_Example/Application}&quot;"/>
 								</option>
 								<option id="gnu.c.compiler.option.include.files.1908706785" name="Include files (-include)" superClass="gnu.c.compiler.option.include.files"/>
 								<option id="com.crt.advproject.gcc.exe.debug.option.optimization.level.1861007024" name="Optimization Level" superClass="com.crt.advproject.gcc.exe.debug.option.optimization.level"/>
