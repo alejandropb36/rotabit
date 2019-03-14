@@ -63,8 +63,8 @@ int main(void) {
     volatile static int i = 0 ;
     /* Enter an infinite loop, just incrementing a counter. */
     while(1) {
-    	LED_Manager_Task();
-
+    	//LED_Manager_Task();
+    	RotaBit();
         i++ ;
     }
     return 0 ;
