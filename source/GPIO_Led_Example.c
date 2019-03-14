@@ -39,9 +39,10 @@
 #include "clock_config.h"
 #include "MKL25Z4.h"
 #include "fsl_debug_console.h"
+#include "LED_Manager.h"
 /* TODO: insert other include files here. */
 
-#include "LED_Manager.h"
+
 
 /* TODO: insert other definitions and declarations here. */
 
@@ -58,14 +59,18 @@ int main(void) {
     BOARD_InitDebugConsole();
 
     PRINTF("Hello World\n");
-
     /* Force the counter to be placed into memory. */
     volatile static int i = 0 ;
     /* Enter an infinite loop, just incrementing a counter. */
     while(1) {
-    	//LED_Manager_Task();
-    	RotaBit();
-        i++ ;
+		Led_On_PortB(i);
+		sleep(MAX_TIME);
+		Led_Off_PortB(i);
+        i++;
+        if(i==4)
+        {
+        	i=0;
+        }
     }
     return 0 ;
 }
