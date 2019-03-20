@@ -42,7 +42,7 @@
 #include "LED_Manager.h"
 /* TODO: insert other include files here. */
 
-
+#include "stdtypes.h"
 
 /* TODO: insert other definitions and declarations here. */
 
@@ -60,17 +60,54 @@ int main(void) {
 
     PRINTF("Hello World\n");
     /* Force the counter to be placed into memory. */
-    volatile static int i = 0 ;
+    volatile static int i = LED_PIN_0;
+    int inc = 1;
+    uint32_t interrump = FALSE;
+    uint32_t band = FALSE;
     /* Enter an infinite loop, just incrementing a counter. */
+    Buthon_interrump(INT_PIN);
     while(1) {
-		Led_On_PortB(i);
-		sleep(MAX_TIME);
-		Led_Off_PortB(i);
-        i++;
-        if(i==4)
-        {
-        	i=0;
-        }
+
+
+    	interrump = FALSE;
+    	interrump = GPIO_ReadPinInput(GPIOB, INT_PIN);
+
+    	if(band == FALSE)
+    	{
+    		Led_On_PortB(i);
+
+			sleep(MAX_TIME);
+			Led_Off_PortB(i);
+
+			i += inc;
+			if(i == LED_PIN_3)
+			{
+				inc= -1;
+			}
+			else if(i == LED_PIN_0){
+				inc = 1;
+			}
+
+			if( interrump == TRUE)
+			{
+				band = TRUE;
+				sleep(MIN_TIME);
+			}
+    	}
+    	else
+    	{
+    		i = i;
+
+    		Led_On_PortB(i);
+    		if(interrump == TRUE)
+			{
+				band = FALSE;
+				sleep(MAX_TIME);
+			}
+    		int a = 0;
+    	}
+
+
     }
     return 0 ;
 }

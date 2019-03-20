@@ -636,4 +636,5 @@
 		<coreId>core0_MKL25Z128xxx4</coreId>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>

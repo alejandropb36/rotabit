@@ -67,16 +67,16 @@ void sleep(uint32_t time)
 	for(uint32_t i = 0; i < time; i++){}
 }
 
-/*
-uint32_t Buthon_interrump(uint_T numPort)
+
+void Buthon_interrump(uint32_t numPort)
 {
-	uint32_t result = 1;
 	//PORTB Clock Source enable
 	CLOCK_EnableClock(kCLOCK_PortB);
 
 	//PIN mux
 	port_pin_config_t ls_LedPinMux;
-	ls_LedPinMux.mux = kPORT_PinDisabledOrAnalog;
+	ls_LedPinMux.mux = kPORT_MuxAsGpio;
+	ls_LedPinMux.pullSelect = kPORT_PullDisable;
 
 	PORT_SetPinConfig(PORTB, numPort, &ls_LedPinMux);
 
@@ -90,16 +90,8 @@ uint32_t Buthon_interrump(uint_T numPort)
 
 	//PIN Initialization
 	GPIO_PinInit(GPIOB, numPort, lps_LedPinCfg);
-
-	if(lps_LedPinCfg->outputLogic == 0)
-	{
-		result = 0;
-	}
-
-
-	return result;
 }
-*/
+
 void RotaBit(void)
 {
 	Led_On_PortB(LED_PIN_0);
@@ -122,5 +114,6 @@ void RotaBit(void)
 	Led_Off_PortB(LED_PIN_3);
 	sleep(MAX_TIME);
 }
+
 
 

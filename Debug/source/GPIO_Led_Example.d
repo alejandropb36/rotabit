@@ -7,7 +7,8 @@ source/GPIO_Led_Example.o source/GPIO_Led_Example.d: \
  ../drivers/fsl_common.h ../drivers/fsl_gpio.h ../board/peripherals.h \
  ../board/pin_mux.h ../board/clock_config.h ../CMSIS/MKL25Z4.h \
  ../utilities/fsl_debug_console.h \
- C:\Users\Alejandro\Documents\MCUXpressoIDE_10.3.0_2200\workspace\GPIO_Led_Example\Application/LED_Manager.h
+ C:\Users\Alejandro\Documents\MCUXpressoIDE_10.3.0_2200\workspace\GPIO_Led_Example\Application/LED_Manager.h \
+ ../source/stdtypes.h
 
 ../board/board.h:
 
@@ -48,3 +49,5 @@ source/GPIO_Led_Example.o source/GPIO_Led_Example.d: \
 ../utilities/fsl_debug_console.h:
 
 C:\Users\Alejandro\Documents\MCUXpressoIDE_10.3.0_2200\workspace\GPIO_Led_Example\Application/LED_Manager.h:
+
+../source/stdtypes.h:

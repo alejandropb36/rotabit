@@ -18,17 +18,19 @@
 #define LED_PIN_2 ((uint32_t)2U)
 #define LED_PIN_3 ((uint32_t)3U)
 
-#define OUT_PIN_PWR ((uint32_t)8U)
-#define INT_PIN ((uint32_t)9U)
+#define OUT_PIN_PWR ((uint32_t)9U)
+#define INT_PIN ((uint32_t)8U)
 
 #define MAX_TIME ((uint32_t)1000000)
+#define MIN_TIME ((uint32_t)500000)
+
 
 /*Protypes*/
 extern void LED_Manager_Task(void);
 extern void Led_On_PortB(uint32_t numPort);
 extern void Led_Off_PortB(uint32_t numPort);
 extern void sleep(uint32_t time);
-extern void Buthon_interrump(void);
+extern void Buthon_interrump(uint32_t numPort);
 extern void RotaBit(void);
 
 #endif /* LED_MANAGER_H_ */
